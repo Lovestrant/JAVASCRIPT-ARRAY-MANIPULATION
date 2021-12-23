@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+          var cars = ["Toyota", "BMW", "Volvo", "Saab"]; // String array
+          var names = ["Kelvin", "jeroo", "Lisa", "Kemboi"]; // String array
+          var points = [10,50,400,30,7000,300]; //Number array
+
+        function fun() {
+            let myP = document.getElementById("demo");
+            myP.innerHTML = cars;
+        }
+        function add() {
+            //Peform add
+            let myp = document.getElementById("demo");
+            addInput = document.getElementById("addInput").value;
+            cars.push(addInput);
+            myp.innerHTML = cars;
+
+        }
+        function remove() {
+            //perform remove
+           let myp = document.getElementById("demo");
+            cars.pop();
+            myp.innerHTML = cars;
+        }
+        function shift() {
+            //perform remove
+           let myp = document.getElementById("demo");
+            cars.shift();
+            myp.innerHTML = cars;
+        }
+        function unshift() {
+            let myP = document.getElementById("demo");
+            addInput = document.getElementById("addInput").value;
+            cars.unshift(addInput);
+            myP.innerHTML =cars;
+        }
+        function change() {
+            let change = document.getElementById("demo");
+            inputVal = document.getElementById("addInput").value;
+            cars[cars.length-1] = inputVal;
+            change.innerHTML = cars;
+        }
+        function deleteArray() {
+            //Delete array element
+            let changed = document.getElementById("demo");
+            inputVal = document.getElementById("addInput").value;
+            delete cars[inputVal];
+            changed.innerHTML = cars;
+        }
+        function splice() {
+            //Splice array Element
+            let changed = document.getElementById("demo");
+            inputVal = document.getElementById("addInput").value;
+            cars.splice(inputVal);
+            changed.innerHTML = cars;
+        }
+        function reverse() {
+            //Reverse array Elements
+            let changed = document.getElementById("demo");
+            inputVal = document.getElementById("addInput").value;
+            cars.reverse();
+            changed.innerHTML = cars;
+        }
+        function sort() {
+            //Sort array Elements
+            let changed = document.getElementById("demo");
+            inputVal = document.getElementById("addInput").value;
+            cars.sort();
+            changed.innerHTML = cars;
+        }
+        function highestCalculate() {
+            let changed = document.getElementById("demo");
+            inputVal = document.getElementById("addInput").value;
+         
+            changed.innerHTML = points.sort(function(a,b) {return b-a});
+        }
+        function concat() {
+            let changed = document.getElementById("demo");
+            inputVal = document.getElementById("addInput").value;
+         
+            changed.innerHTML = cars.concat(points,"Hello", names);
+        }
+
+    </script>
+</head>
+<body>
+    <h1>Javascript Array Demo</h1>
+    <p id = "demo"></p>
+    <button onclick="fun()">Display Array</button><br><br>
+    
+    <button onclick="remove()">POP Array Element</button><br><br>
+
+    <input id="addInput" type="text" placeholder="Write element to push/shift/push e.t.c to the array." style="width: 40%;"><br><br>
+    <button onclick="add()">Push Array Element</button><br><br>
+    <button onclick="shift()">Shift Array Element</button><br><br>
+    <button onclick="unshift()">UNShift Array Element</button><br><br>
+    <button onclick="change()">Change Final Array Element</button><br><br>
+    <button onclick="deleteArray()">Delete Array Element</button><br><br>
+    <button onclick="splice()">Splice Array Element</button><br><br>
+    <button onclick="reverse()">reverse Array Element</button><br><br>
+    <button onclick="sort()">Sort Array Element</button><br><br>
+    <button onclick="highestCalculate()">Display Highest value in array</button><br><br>
+    <button onclick="concat()">Concat Arrays</button><br><br>
+    
+</body>
+</html>
