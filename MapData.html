@@ -1,0 +1,25 @@
+<ul id="todoList"></ul>
+
+<script>
+  const STORAGE_KEY = "todos_simple";
+
+  // Example: localStorage.setItem(STORAGE_KEY, JSON.stringify([{title:"Learn JS", done:false},{title:"Build a To-Do", done:true}]));
+
+  function renderTodos() {
+    const list = document.getElementById("todoList");
+    list.innerHTML = "";
+
+    // Get from localStorage
+    const todos = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+
+    // Map to HTML
+    todos.forEach(todo => {
+      const li = document.createElement("li");
+      li.textContent = todo.title + (todo.done ? " ✅" : "");
+      list.appendChild(li);
+    });
+  }
+
+  // Call once when page loads
+  renderTodos();
+</script>
